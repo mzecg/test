@@ -109,7 +109,10 @@ class MessageManager{
 
             return result;
         } catch (error) {
-            
+            return{
+                success:false,
+                errorMessage:'网络错误'
+            }
         }
     }
 }

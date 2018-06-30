@@ -87,7 +87,12 @@ export default class HomeScreen extends Commponent {
 
     renderRow = (message)=>{
         return(
-            <p>{`${message.id}:${message.title}`}</p>
+            <HomeListItem
+                {...message}
+                onItemClick={()=>{
+                    this.props.history.push('/CommenScreen/'+message.id)
+                }}
+            />
         )
     }
     onRefresh = async()=>{
